@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Puro Flow Media | Connect</title>
-<meta name="description" content="Book a call, send a quick question, or save our contact. Puro Flow Media, San Diego.">
+<meta name="description" content="Book a call or a podcast recording, send a quick question, or save our contact. Puro Flow Media, San Diego.">
 <meta name="theme-color" content="#0A0A0A">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Puro Flow Media | Connect">
@@ -70,6 +70,16 @@
     min-height:50px;padding:12px 18px;border-radius:14px}
   .vcard:hover .cta{background:var(--deep)}
   .cta svg{width:16px;height:16px}
+  /* compact row card (15 min) and landscape card (podcast) */
+  .vcard.wide{flex-direction:row}
+  .vcard.wide .vmedia{flex:0 0 40%;aspect-ratio:4/5}
+  .vcard.wide .vtop{justify-content:flex-end}
+  .vcard.wide .vbody{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:16px}
+  .vcard.wide .vbody h2{font-size:clamp(16px,4.6vw,20px)}
+  .vcard.wide .vbody p{font-size:13px;margin:6px 0 14px}
+  .vcard.wide .cta{min-height:44px;font-size:14px;padding:10px 14px}
+  .eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--flow);margin-bottom:6px}
+  .vmedia.land{aspect-ratio:16/9}
   .note{font-size:13px;color:var(--steel);margin-top:14px;padding:12px 14px;border-left:3px solid var(--flow);background:rgba(82,134,194,.10);border-radius:0 10px 10px 0}
 
   .panel{background:var(--white);border-radius:20px;padding:22px 20px;box-shadow:var(--shadow)}
@@ -113,7 +123,7 @@
   footer .motto span{color:var(--flow)}
   footer small{display:block;margin-top:10px;font-size:10px;letter-spacing:.3em;color:rgba(245,245,245,.5)}
 
-  @media (min-width:600px){ .book{grid-template-columns:1fr 1fr} .team{grid-template-columns:repeat(4,1fr)} .chip{font-size:10px;letter-spacing:.1em;padding:6px 9px} .vtop{top:10px;left:10px;right:10px} }
+  @media (min-width:600px){ .book{grid-template-columns:1fr 1fr} .vcard.wide{grid-column:1/-1} .vcard.wide .vmedia{flex-basis:34%} .team{grid-template-columns:repeat(4,1fr)} .chip{font-size:10px;letter-spacing:.1em;padding:6px 9px} .vtop{top:10px;left:10px;right:10px} }
   @media (prefers-reduced-motion:reduce){ .vcard{transition:none} }
 </style>
 </head>
@@ -155,8 +165,37 @@
           <span class="cta">Pick a time <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </a>
+
+      <a class="vcard wide" href="https://calendar.app.google/aSxQ9cB82K73zXG57" target="_blank" rel="noopener" aria-label="Book a 15 minute Shoot Prep Call">
+        <div class="vmedia">
+          <video src="prep.mp4" poster="prep.jpg" autoplay muted loop playsinline preload="metadata"></video>
+          <div class="vtop"><span class="chip dur">15 min</span></div>
+        </div>
+        <div class="vbody">
+          <div class="eyebrow">Shoot Prep Call</div>
+          <h2>Lock in your shoot day</h2>
+          <p>Location, wardrobe, talking points and timing, covered before we roll cameras.</p>
+          <span class="cta">Pick a time <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
     </section>
     <p class="note">Calls open starting the next business day, Monday to Friday. Every call is on Google Meet and recorded with our AI notetaker, so nothing gets missed.</p>
+
+    <div class="label">Book a podcast</div>
+    <section class="book">
+      <a class="vcard" href="https://calendar.app.google/q7swDSsc2ZnZXXeA8" target="_blank" rel="noopener" aria-label="Book a 90 minute Podcast Recording" style="grid-column:1/-1">
+        <div class="vmedia land">
+          <video src="podcast.mp4" poster="podcast.jpg" autoplay muted loop playsinline preload="metadata"></video>
+          <div class="vtop"><span class="chip">Podcast Recording</span><span class="chip dur">90 min</span></div>
+        </div>
+        <div class="vbody">
+          <h2>Your show, shot like a film</h2>
+          <p>Multi-camera video, clean audio, lighting and direction. You bring the conversation, we handle the rest and cut it into clips.</p>
+          <span class="cta">Book a recording date <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </section>
+    <p class="note">Podcast dates open 7 days out, one recording per day. We confirm the location (our setup or your space) after you book.</p>
 
     <div class="label">Quick question?</div>
     <section class="panel">
@@ -220,7 +259,7 @@
     <div class="label">How we work</div>
     <ol class="how">
       <li>Quick questions and files go in Slack, so everything lives in one place.</li>
-      <li>Book a 30-minute check-in for reviews and approvals, or a 60-minute session for strategy.</li>
+      <li>Book a 15-minute shoot prep before filming, a 30-minute check-in for reviews and approvals, or a 60-minute session for strategy. Podcasts get their own 90-minute recording slot.</li>
       <li>Fill out the short form when you book, so we show up prepared.</li>
       <li>Join from a quiet spot where you can focus (not while driving). We record the call and send the summary.</li>
     </ol>
