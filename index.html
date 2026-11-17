@@ -124,24 +124,87 @@
   footer .motto span{color:var(--flow)}
   footer small{display:block;margin-top:10px;font-size:10px;letter-spacing:.3em;color:rgba(245,245,245,.5)}
 
+
+  /* hero: drone banner + profile (matches the partner booking pages) */
+  :root{--mist:#9DB8E6}
+  .hero{background-image:radial-gradient(720px 420px at 50% calc(min(37.5vw,300px) + 300px), rgba(30,58,95,.45), transparent 70%)}
+  .banner{position:relative;aspect-ratio:16/6;max-height:300px;width:100%;overflow:hidden;background:var(--black)}
+  .banner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .banner::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.55) 55%,rgba(10,10,10,.75) 100%);z-index:1}
+  .banner::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(180deg,rgba(10,10,10,0) 0%,rgba(10,10,10,.82) 72%,#0A0A0A 100%);z-index:1}
+  .btxt{position:absolute;z-index:2;right:max(12px,5vw);top:44%;transform:translateY(-50%);width:min(56%,430px);text-align:center;color:var(--white)}
+  .btxt img{display:block;width:88%;max-width:320px;height:auto;margin:0 auto}
+  .brule{height:2px;width:52%;margin:clamp(7px,1.8vw,14px) auto;background:linear-gradient(90deg,transparent,var(--flow),transparent)}
+  .bname{font-family:var(--display);font-weight:800;letter-spacing:.08em;font-size:clamp(11px,3.3vw,23px);line-height:1.1}
+  .btitle{font-weight:600;letter-spacing:.2em;font-size:clamp(6.5px,1.75vw,11.5px);color:rgba(245,245,245,.8);margin-top:clamp(3px,.9vw,7px);text-transform:uppercase}
+  header .in.profile{text-align:left;padding-block:0 34px}
+  .avatar{--av:clamp(118px,34vw,164px);position:relative;z-index:3;display:block;width:var(--av);height:var(--av);margin:calc(var(--av) / -2) 0 0;border-radius:50%;object-fit:cover;
+    border:4px solid var(--black);background:var(--charcoal);box-shadow:0 0 0 2px rgba(82,134,194,.75),0 14px 34px rgba(0,0,0,.55)}
+  .profile h1{font-size:clamp(24px,7vw,32px);margin:16px 0 8px;color:var(--white)}
+  .cred{display:inline-block;vertical-align:middle;position:relative;top:-3px;margin-left:4px;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.16em;
+    padding:5px 9px;border-radius:999px;border:1px solid rgba(82,134,194,.65);color:var(--mist)}
+  .headline{font-size:15px;line-height:1.45;color:rgba(245,245,245,.92)}
+  .meta,.loc{font-size:13.5px;color:rgba(245,245,245,.66);margin-top:8px}
+  .loc{margin-top:3px}
+  .profile a.tx{color:var(--mist);text-decoration:underline;text-decoration-color:rgba(157,184,230,.45);text-underline-offset:3px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .pill{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--off);
+    background:rgba(255,255,255,.05);border:1px solid rgba(245,245,245,.16)}
+  .pill svg{width:15px;height:15px;flex:none;color:var(--flow)}
+  .hbtns{display:flex;gap:10px;margin-top:18px}
+  .hbtn{flex:1;display:flex;justify-content:center;align-items:center;gap:8px;text-align:center;min-height:50px;padding:10px 12px;border-radius:14px;font-weight:700;font-size:15px;
+    color:var(--white);border:1.5px solid rgba(245,245,245,.3)}
+  .hbtn.primary{background:var(--flow);border-color:var(--flow)}
+  .profile .lede{max-width:none;margin:18px 0 0;color:rgba(245,245,245,.68)}
+  video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
+
   @media (min-width:600px){ .book{grid-template-columns:1fr 1fr} .vcard.wide{grid-column:1/-1} .vcard.wide .vmedia{flex-basis:34%} .team{grid-template-columns:repeat(4,1fr)} .chip{font-size:10px;letter-spacing:.1em;padding:6px 9px} .vtop{top:10px;left:10px;right:10px} }
   @media (prefers-reduced-motion:reduce){ .vcard{transition:none} }
 </style>
 </head>
 <body>
 
-<header class="band-dark">
-  <div class="in">
-    <img src="logo.png" alt="Puro Flow Media" width="1200" height="218">
-    <div class="tag">Create in <b>Flow</b> State.</div>
-    <h1>Let's make your next move count.</h1>
-    <p class="lede">Book time with our team, send a quick question, or save our info. Everything you need is one tap away.</p>
+<header class="hero band-dark">
+  <div class="banner">
+    <video src="banner.mp4" poster="banner.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div class="btxt">
+      <img src="logo.png" alt="Puro Flow Media" width="1200" height="218">
+      <div class="brule"></div>
+      <div class="bname">FELIPE TOSCANO</div>
+      <div class="btitle">Founder · Creative Director</div>
+    </div>
+  </div>
+  <div class="in profile">
+    <img class="avatar" src="felipe.jpg" alt="Felipe Toscano, Founder and Creative Director of Puro Flow Media" width="480" height="480">
+    <h1>Felipe Toscano <span class="cred">PURO FLOW</span></h1>
+    <p class="headline">Founder, CEO and Creative Director at <a class="tx" href="https://puroflowmedia.com" target="_blank" rel="noopener">Puro Flow Media</a> | Story-driven content and personal brands for doctors, entrepreneurs and founders</p>
+    <p class="meta">Content partner to Adit and Media NV · Filming at PDC Vancouver, SPEAR Summit and AAPPM</p>
+    <p class="loc">San Diego, California · Filming across the US</p>
+    <div class="pills">
+      <a class="pill" href="https://puroflowmedia.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        puroflowmedia.com
+      </a>
+      <a class="pill" href="https://www.instagram.com/puroflow" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        @puroflow
+      </a>
+      <a class="pill" href="https://www.instagram.com/felipepe7/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        @felipepe7
+      </a>
+    </div>
+    <div class="hbtns">
+      <a class="hbtn primary" href="#book">Book a call</a>
+      <a class="hbtn" href="puro-flow-media.vcf">Save my contact</a>
+    </div>
+    <p class="lede">Create in <b style="color:var(--flow)">Flow</b> State. Book time with our team, send a quick question, or save our info. Everything you need is one tap away.</p>
   </div>
 </header>
 
 <main>
   <div class="in">
-    <div class="label">Book a call</div>
+    <div class="label" id="book">Book a call</div>
     <section class="book calls">
       <a class="vcard wide" href="https://calendar.app.google/aSxQ9cB82K73zXG57" target="_blank" rel="noopener" aria-label="Book a 15 minute Shoot Prep Call">
         <div class="vmedia">
